@@ -3,14 +3,6 @@ this project made to achieve all the requested in the task
 created by Create react app also it used Tailwind css and material ui for the design purposes 
 connected to a small redux store to manage data across all component and the dummy data is in the reduce file 
 
-# all requested functionality fulfilled and are the following: 
-- create with react  
-- I used for titles the default fonts of tailwindcss as its near the design and some other roboto fonts, and i overwrite the default theme primary color to be the green one
-- functionality of assigning and removing are working the redux and after pressing the save button it saved in the state of the redux
-- functionality of searching in both user table and sidebar are working but only u have to enter more then 3 charater as it doesnt effect the component to rerender alot 
-- data is stored in the redux reducer file as it connects all components to gether instead of passing it through props 
- 
-
 ## Available Scripts
 
 In the project directory, you can run:

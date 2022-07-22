@@ -26,7 +26,7 @@ function Navbar({ setIsOpen, isOpen }) {
 
   return (
     <div className="w-full">
-      <nav className="border-b-[1px] border-grey-300 w-full">
+      <nav className="border-b-[1px] border-gray-300 w-full">
         <div className="mx-auto px-2">
           <div className="flex items-center justify-between h-10 w-full">
             <div className="flex justify-start items-center flex-1">
@@ -51,7 +51,7 @@ function Navbar({ setIsOpen, isOpen }) {
                 )}
               </button>
               <div className="hidden md:block flex-1">
-                <span className="text-sm font-bold px-2 text-grey-600">
+                <span className="text-sm font-bold px-2 text-gray-600">
                   {greetings}
                 </span>
                 <span className=" text-sm">
@@ -59,7 +59,7 @@ function Navbar({ setIsOpen, isOpen }) {
                 </span>
               </div>
             </div>
-            <div className="flex justify-between items-center divide-x divide-grey-300">
+            <div className="flex justify-between items-center divide-x divide-gray-300">
               <div className="flex justify-between items-center">
                 <QuestionMarkCircleIcon className="h-3 w-3 md:h-6 md:w-6" />
                 <div className="relative m-3 md:m-5">

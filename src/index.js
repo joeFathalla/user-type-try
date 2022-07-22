@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { ThemeProvider } from "@material-tailwind/react";
 import {
   legacy_createStore as createStore,
   applyMiddleware,
@@ -12,6 +11,16 @@ import thunk from "redux-thunk";
 import reducers from "./store/reducers";
 import App from "./App";
 import "./index.css";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { green } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: green[500]
+    }
+  }
+});
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -27,7 +36,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
           <App />
         </ThemeProvider>
       </BrowserRouter>

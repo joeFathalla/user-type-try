@@ -8,7 +8,12 @@ import Checkbox from "@mui/material/Checkbox";
 import { SearchIcon } from "@heroicons/react/outline";
 import SideBarItem from "./SideBarItem";
 
-const Sidebar = ({ isOpen, items, selectProfileHandler }) => {
+const Sidebar = ({
+  isOpen,
+  items,
+  selectProfileHandler,
+  selectedProfileId
+}) => {
   const navRef = useRef();
   const [searchText, setSearchText] = useState("");
   const [allItems, setAllItems] = useState(items);
@@ -106,6 +111,7 @@ const Sidebar = ({ isOpen, items, selectProfileHandler }) => {
                     item={item}
                     key={item.id}
                     selectItem={selectProfileHandler}
+                    selectedId={selectedProfileId}
                   />
                 ))}
               </div>

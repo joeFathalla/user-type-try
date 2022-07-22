@@ -15,7 +15,13 @@ function SingleUser({ user, selectedUsers, selectedUserHandler }) {
   };
 
   return (
-    <div className="flex justify-around items-center border border-gray-50 space-x-1">
+    <div
+      className={
+        selectedUsers.findIndex((u) => u.id === user.id) !== -1
+          ? "flex justify-around items-center border border-green-300 space-x-1 bg-green-100"
+          : "flex justify-around items-center border border-gray-50 space-x-1"
+      }
+    >
       <div>
         <Checkbox
           checked={selectedUsers.findIndex((u) => u.id === user.id) !== -1}

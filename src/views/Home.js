@@ -25,6 +25,7 @@ function Home() {
           isOpen={isOpen}
           items={profiles}
           selectProfileHandler={selectProfileHandler}
+          selectedProfileId={selectedProfile.id}
         />
         <div className="flex-1 h-full">
           <SingleProfile profile={selectedProfile} />

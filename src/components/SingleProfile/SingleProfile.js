@@ -1,10 +1,17 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CustomTabs from "./CustomTabs";
 import { Menu } from "@headlessui/react";
 import { DotsHorizontalIcon } from "@heroicons/react/outline";
 import CustomDropdownMenu from "../Shared/CustomDropdownMenu";
+import { saveProfile } from "../../store/actions/users";
 
 function SingleProfile({ profile }) {
+  const dispatch = useDispatch();
+  const saveHandler = () => {
+    dispatch(saveProfile());
+  };
+
   return (
     <div>
       {/* details and save button part */}
@@ -40,14 +47,17 @@ function SingleProfile({ profile }) {
           </div>
         </div>
         <div className="my-5 md:my-0 w-full md:w-auto text-center">
-          <button className="bg-transparent text-sm bg-green-500 hover:bg-gray-50 text-white font-semibold hover:text-[#191919] py-2 px-4 border hover:border-green-500 border-transparent rounded">
+          <button
+            onClick={saveHandler}
+            className="bg-transparent text-sm bg-green-500 hover:bg-gray-50 text-white font-semibold hover:text-[#191919] py-2 px-4 border hover:border-green-500 border-transparent rounded"
+          >
             Save Changes
           </button>
         </div>
       </div>
       {/* tabs and user tables  */}
       <div className="mt-8">
-        <CustomTabs assignedUsers={profile.users} />
+        <CustomTabs />
       </div>
     </div>
   );

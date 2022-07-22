@@ -5,7 +5,7 @@ import { Menu } from "@headlessui/react";
 import { DotsHorizontalIcon } from "@heroicons/react/outline";
 import CustomDropdownMenu from "../Shared/CustomDropdownMenu";
 
-function SideBarItem({ item }) {
+function SideBarItem({ item, selectItem }) {
   const [itemSelected, setItemSelected] = useState(false);
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   return (
@@ -37,7 +37,7 @@ function SideBarItem({ item }) {
                 {() => (
                   <a
                     className="block mx-3 my-2 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => selectItem(item)}
                   >
                     <span>Edit</span>
                   </a>
@@ -47,7 +47,7 @@ function SideBarItem({ item }) {
                 {() => (
                   <a
                     className="block mx-3 my-2 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => selectItem(item)}
                   >
                     <span>Assign User</span>
                   </a>
@@ -57,7 +57,9 @@ function SideBarItem({ item }) {
                 {() => (
                   <a
                     className="block mx-3 my-2 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => {
+                      console.log("assign group item " + item.id);
+                    }}
                   >
                     <span>Assign Group</span>
                   </a>
@@ -67,7 +69,9 @@ function SideBarItem({ item }) {
                 {() => (
                   <a
                     className="block mx-3 my-2 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => {
+                      console.log("deleting item " + item.id);
+                    }}
                   >
                     <span>Delete</span>
                   </a>

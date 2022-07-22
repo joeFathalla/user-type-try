@@ -8,10 +8,24 @@ import Checkbox from "@mui/material/Checkbox";
 import { SearchIcon } from "@heroicons/react/outline";
 import SideBarItem from "./SideBarItem";
 
-const Sidebar = ({ isOpen, items }) => {
+const Sidebar = ({ isOpen, items, selectProfileHandler }) => {
   const navRef = useRef();
+  const [searchText, setSearchText] = useState("");
+  const [allItems, setAllItems] = useState(items);
   const [allItemsSelected, setAllItemsSelected] = useState(false);
   const [sortedAsc, setSortedAsc] = useState(false);
+
+  const handleChangeText = (e) => {
+    let newValue = e.target.value;
+    setSearchText(newValue);
+    if (searchText.length <= 2) {
+      setAllItems(items);
+    } else {
+      let newItem = items.filter((item) => item.name.includes(searchText));
+      setAllItems(newItem);
+    }
+  };
+
   return (
     <Transition
       show={isOpen}
@@ -41,6 +55,8 @@ const Sidebar = ({ isOpen, items }) => {
                   type="text"
                   autoComplete="off"
                   placeholder="Search..."
+                  value={searchText}
+                  onChange={handleChangeText}
                 />
               </div>
             </div>
@@ -83,15 +99,19 @@ const Sidebar = ({ isOpen, items }) => {
                 </button>
               </div>
             </div>
-            {items.length !== 0 ? (
+            {allItems.length !== 0 ? (
               <div>
-                {items.map((item) => (
-                  <SideBarItem item={item} key={item.id} />
+                {allItems.map((item) => (
+                  <SideBarItem
+                    item={item}
+                    key={item.id}
+                    selectItem={selectProfileHandler}
+                  />
                 ))}
               </div>
             ) : (
               <div className="pt-8 text-center font-bold">
-                <span>No Profile found, please Add new Profile</span>
+                <span>No Profile found </span>
               </div>
             )}
           </div>

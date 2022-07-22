@@ -9,7 +9,7 @@ import UsersComponent from "./UsersComponent";
 import GroupsComponent from "./GroupsComponent";
 import UsersPrivileges from "./UsersPrivileges";
 
-export default function CustomTabs({ assignedUsers }) {
+export default function CustomTabs() {
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
@@ -40,7 +40,7 @@ export default function CustomTabs({ assignedUsers }) {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <UsersComponent assignedUsers={assignedUsers} />
+          <UsersComponent />
         </TabPanel>
         <TabPanel value="2">
           <GroupsComponent />

@@ -29,7 +29,7 @@ function UsersList({
     if (usersList !== users) {
       setUsersList(users);
     }
-  }, [users]);
+  }, [users, usersList]);
 
   const isSelectedAll = () => {
     if (users.length === 0) {
@@ -42,6 +42,7 @@ function UsersList({
       if (userIndex === -1) {
         selectedAll = false;
       }
+      return null;
     });
     return selectedAll;
   };

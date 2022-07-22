@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu } from "@headlessui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 import CustomAvatar from "../Shared/CustomAvatar";
 import CustomDropdownMenu from "../Shared/CustomDropdownMenu";
 

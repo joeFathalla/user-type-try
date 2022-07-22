@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Checkbox from "@mui/material/Checkbox";
 import LockIcon from "@mui/icons-material/Lock";
 import { Menu } from "@headlessui/react";
@@ -6,7 +6,6 @@ import { DotsHorizontalIcon } from "@heroicons/react/outline";
 import CustomDropdownMenu from "../Shared/CustomDropdownMenu";
 
 function SideBarItem({ item, selectItem, selectedId }) {
-  const [itemSelected, setItemSelected] = useState(false);
   return (
     <div
       className={
@@ -41,46 +40,46 @@ function SideBarItem({ item, selectItem, selectedId }) {
             >
               <Menu.Item>
                 {() => (
-                  <a
-                    className="block mx-3 my-2 cursor-pointer"
+                  <button
+                    className="block mx-3 my-2 cursor-pointer w-full text-left"
                     onClick={() => selectItem(item)}
                   >
                     <span>Edit</span>
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {() => (
-                  <a
-                    className="block mx-3 my-2 cursor-pointer"
+                  <button
+                    className="block mx-3 my-2 cursor-pointer w-full text-left"
                     onClick={() => selectItem(item)}
                   >
                     <span>Assign User</span>
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {() => (
-                  <a
-                    className="block mx-3 my-2 cursor-pointer"
+                  <button
+                    className="block mx-3 my-2 cursor-pointer w-full text-left"
                     onClick={() => {
                       console.log("assign group item " + item.id);
                     }}
                   >
                     <span>Assign Group</span>
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {() => (
-                  <a
-                    className="block mx-3 my-2 cursor-pointer"
+                  <button
+                    className="block mx-3 my-2 cursor-pointer w-full text-left"
                     onClick={() => {
                       console.log("deleting item " + item.id);
                     }}
                   >
                     <span>Delete</span>
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
             </CustomDropdownMenu>

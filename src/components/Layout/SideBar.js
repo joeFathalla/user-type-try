@@ -1,9 +1,5 @@
 import React, { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
-// import IconButton from "@mui/material/IconButton";
-// import Button from "@mui/material/Button";
-// import InputAdornment from "@mui/material/InputAdornment";
-// import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import { SearchIcon } from "@heroicons/react/outline";
 import SideBarItem from "./SideBarItem";
@@ -75,7 +71,10 @@ const Sidebar = ({
                 <span>items</span>
               </div>
               <div>
-                <button className="bg-gray-200 text-sm hover:bg-gray-100 text-[#191919] font-semibold hover:text-white p-2 rounded">
+                <button
+                  onClick={() => setSortedAsc((prev) => !prev)}
+                  className="bg-gray-200 text-sm hover:bg-gray-100 text-[#191919] font-semibold hover:text-white p-2 rounded"
+                >
                   {sortedAsc ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

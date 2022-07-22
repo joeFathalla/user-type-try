@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import CustomTabs from "./CustomTabs";
 import { Menu } from "@headlessui/react";
 import { DotsHorizontalIcon } from "@heroicons/react/outline";
@@ -28,12 +28,14 @@ function SingleProfile({ profile }) {
             >
               <Menu.Item>
                 {() => (
-                  <a
+                  <button
                     className="block mx-3 my-2 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => {
+                      console.log("deleted");
+                    }}
                   >
                     <span>Delete</span>
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
             </CustomDropdownMenu>

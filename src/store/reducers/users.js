@@ -233,6 +233,7 @@ const usersReducer = (
       userAddArray.map((user) => {
         let userIndex = availableUsers.findIndex((u) => u.id === user.id);
         availableUsers.splice(userIndex, 1);
+        return null;
       });
       return {
         ...state,
@@ -245,6 +246,7 @@ const usersReducer = (
       userRemoveArray.map((user) => {
         let userIndex = assignUsers.findIndex((u) => u.id === user.id);
         assignUsers.splice(userIndex, 1);
+        return null;
       });
       return {
         ...state,
@@ -257,6 +259,7 @@ const usersReducer = (
       userSelectArray.map((user) => {
         let userIndex = availableUsersSelect.findIndex((u) => u.id === user.id);
         availableUsersSelect.splice(userIndex, 1);
+        return null;
       });
       return {
         ...state,
@@ -272,6 +275,7 @@ const usersReducer = (
         if (profile.id === newProfile.id) {
           profile.users = newProfile.users;
         }
+        return null;
       });
       return {
         ...state,

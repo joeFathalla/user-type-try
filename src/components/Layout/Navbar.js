@@ -3,9 +3,7 @@ import Moment from "react-moment";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  QuestionMarkCircleIcon,
-  ChevronDownIcon,
-  ChevronUpIcon
+  QuestionMarkCircleIcon
 } from "@heroicons/react/outline";
 import { MenuIcon, BellIcon } from "@heroicons/react/solid";
 import UserProfileNavbar from "./UserProfileNavbar";
@@ -16,7 +14,7 @@ function Navbar({ setIsOpen, isOpen }) {
   let greetings = "";
   if (hr >= 0 && hr < 12) {
     greetings = "Good Morning! ";
-  } else if (hr == 12) {
+  } else if (hr === 12) {
     greetings = "Good Noon! ";
   } else if (hr >= 12 && hr <= 17) {
     greetings = "Good Afternoon!";

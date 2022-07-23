@@ -68,7 +68,7 @@ function UsersList({
           inputProps={{ "aria-label": "controlled" }}
         />
         <div>
-          <span>{title}</span>
+          <span className="font-bold">{title}</span>
         </div>
       </div>
 

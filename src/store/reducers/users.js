@@ -206,18 +206,12 @@ const usersReducer = (
       },
       {
         id: 6,
-        name: "Customer Service",
-        users: [],
-        isLocked: false
-      },
-      {
-        id: 7,
         name: "Wealth Managment",
         users: [],
         isLocked: false
       },
       {
-        id: 8,
+        id: 7,
         name: "IT",
         users: [],
         isLocked: false

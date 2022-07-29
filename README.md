@@ -1,7 +1,3 @@
-# Reno Systems Task
-this project made to achieve all the requested in the task 
-created by Create react app also it used Tailwind css and material ui for the design purposes 
-connected to a small redux store to manage data across all component and the dummy data is in the reduce file 
 
 ## Available Scripts
 
